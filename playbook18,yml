@@ -1,0 +1,20 @@
+---
+- name: implementing handlers
+  hosts: all
+  tasks:
+   - name: install apache2
+     apt:
+      name: apache2
+      state: present
+      update_cache: yes
+   - name: eddit the file
+     copy:
+      content: "Hi Deepthi"
+      dest: /vars/www/html/index.html
+     notify: restart apache2
+  hadlers:
+    - name: restart apache2
+      service:
+       name: apache2
+       state: restarted
+...

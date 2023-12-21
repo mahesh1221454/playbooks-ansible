@@ -1,0 +1,12 @@
+---
+- name: implementing when functions
+  hosts: all
+  vars:
+    - a: 20
+  tasks:
+  - name: downloading jenkins.war file
+    get_url:
+      url: https://get.jenkins.io/war-stable/2.426.1/jenkins.war 
+      dest: /tmp
+    when: a == 10
+... 

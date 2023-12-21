@@ -1,0 +1,13 @@
+---
+- name: create user on all servers
+  hosts: all
+  tasks:
+    - name: user creation 
+      user:
+        name: yamuna
+        password: deepthi
+        uid: 3456
+        home: /home/ubuntu/yamuna
+        comment: "a normal user"
+        shell: /bin/bash
+...

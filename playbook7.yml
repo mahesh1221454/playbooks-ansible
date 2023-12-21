@@ -1,0 +1,14 @@
+---
+- name: install various s/w's
+  hosts: all
+  vars:
+    - a: tomcat9
+    - b: present
+    - c: yes
+  tasks:
+    - name: install s/w's
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+...
